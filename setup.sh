@@ -24,13 +24,13 @@ ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 
 echo 'installing spotify' 
-snap install spotify
+sudo snap install spotify
 
 echo 'installing discord' 
-snap install discord
+sudo snap install discord
 
 echo 'installing beekeper' 
-snap install beekeper
+sudo snap install beekeper
 
 echo 'installing slack' 
 sudo snap install slack --classic
@@ -39,7 +39,7 @@ echo 'Vs Code'
 sudo snap install code --classic
 
 echo 'installing guake'
-sudo apt install guake -y
+sudo snap install guake --edge
 
 echo 'installing chrome' 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -59,10 +59,19 @@ npm --version
 
 echo 'install docker'
 sudo apt-get remove docker docker-engine docker.io containerd runc
-curl -fsSL https://get.docker.com -o get-docker.sh
-DRY_RUN=1 sh ./get-docker.sh
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+docker run hello-world
 
 echo 'installing docker-compose' 
 sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+docker --version
 docker-compose --version
