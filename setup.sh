@@ -42,7 +42,7 @@ echo 'Vs Code'
 sudo snap install code --classic
 
 echo 'installing guake'
-sudo snap install guake --edge
+sudo apt install guake
 
 echo 'installing chrome' 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
