@@ -35,6 +35,12 @@ sudo snap install discord
 echo 'installing beekeper' 
 sudo snap install beekeper
 
+echo 'installing teams' 
+sudo snap install teams
+
+echo 'installing Zoom'
+sudo snap install zoom-client
+
 echo 'installing slack' 
 sudo snap install slack --classic
 
