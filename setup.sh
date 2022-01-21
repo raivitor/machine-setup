@@ -23,6 +23,9 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 
+sudo rm /etc/apt/preferences.d/nosnap.pref
+sudo apt install snapd
+
 echo 'installing spotify' 
 sudo snap install spotify
 
