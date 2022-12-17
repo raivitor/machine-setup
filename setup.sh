@@ -57,6 +57,7 @@ sudo apt install guake -y
 echo 'installing chrome' 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo rm google-chrome-stable_current_amd64.deb
 
 echo 'installing nvm' 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
