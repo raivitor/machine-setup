@@ -31,20 +31,11 @@ curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client -y
 
-echo 'installing discord' 
-sudo snap install discord
-
 echo 'installing beekeeper' 
 wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | sudo apt-key add -
 echo "deb https://deb.beekeeperstudio.io stable main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.list
 sudo apt update -y
 sudo apt install beekeeper-studio -y
-
-echo 'installing teams' 
-sudo snap install teams
-
-echo 'installing Zoom'
-sudo snap install zoom-client
 
 echo 'installing slack' 
 sudo snap install slack --classic
