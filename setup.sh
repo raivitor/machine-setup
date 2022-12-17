@@ -34,8 +34,11 @@ sudo apt-get update && sudo apt-get install spotify-client -y
 echo 'installing discord' 
 sudo snap install discord
 
-echo 'installing beekeper' 
-sudo snap install beekeper
+echo 'installing beekeeper' 
+wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | sudo apt-key add -
+echo "deb https://deb.beekeeperstudio.io stable main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.list
+sudo apt update -y
+sudo apt install beekeeper-studio -y
 
 echo 'installing teams' 
 sudo snap install teams
