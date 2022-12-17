@@ -25,7 +25,7 @@ cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
 
 echo 'installing Snap' 
 sudo rm /etc/apt/preferences.d/nosnap.pref
-sudo apt install snapd
+sudo apt install snapd -y
 
 echo 'installing spotify' 
 curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
@@ -47,12 +47,12 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > pa
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https -y
 sudo apt update
-sudo apt install code
+sudo apt install code -y
 
 echo 'installing guake'
-sudo apt install guake
+sudo apt install guake -y
 
 echo 'installing chrome' 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
