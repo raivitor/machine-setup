@@ -38,7 +38,7 @@ sudo apt update -y
 sudo apt install beekeeper-studio -y
 
 echo 'installing slack' 
-sudo snap install slack --classic
+sudo apt install slack -y
 
 echo 'Vs Code' 
 sudo snap install code --classic
